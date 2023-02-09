@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    padding: 40px;
+    background-color: #A4AABD;
+}
+
+h1 {
+    font-size: 4em;
+    margin: 40px;
+}
+
+
+#pergunta{
+    border-radius:20px;
+    text-align: left;
+    background-color: #F3F3FB;
+    width: 60vw;
+    margin: auto;
+    padding-top:10px;
+}
+
+#questao {
+    text-align: center;
+}
+
+button {
+    background-color: #4370E7;
+    border: none;
+    margin: 0px;
+    width: 60vw;
+    height: 60px;
+    border-radius:0px 0px 20px 20px;
+}
+
+label{
+    margin:5px;
+}
+.form-check {
+    display: none;
+    margin: 20px;
+}

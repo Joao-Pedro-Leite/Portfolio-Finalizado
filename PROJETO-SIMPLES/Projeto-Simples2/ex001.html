@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício da data</title>
+</head>
+<style>
+
+    /* 
+    Cores :
+    
+    Manhã - #85C8F2
+    Tarde - #98A67B
+    Noite - #012326
+     */
+
+    * {
+        margin: 0px;
+        padding: 0px;   
+        box-sizing: border-box;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+        background-color: rgb(104, 194, 224);
+        height: 100%;
+        width: 100vw;
+    }
+
+    header {
+        margin-top: 40px;
+        font-size: 1.5em;
+        text-align: center;
+        color: white;
+    }
+    
+    main {
+        height: 350px;
+        width: 350px;
+        background-color: white;
+
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        border-radius: 30px;
+        box-shadow: 0px 1px 3px 0px black;
+        text-align: center;
+
+    }
+
+    main > p {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    main > img {
+        margin: 10px;
+    }
+
+    footer {
+        
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        
+        color: white;
+        background-color: rgb(118, 118, 202);    
+        text-align: center;
+        padding: 2px;
+        
+    
+    }
+</style>
+<body onload="relogio()">
+    <header>
+        <h1>Horário do dia</h1>
+    </header>
+    <main>
+     <p id="mensagem">Aqui mostra o horário</p>
+     <img id="img" src="imagens/foto-manha-250.png" alt="foto manhã">
+     
+    </main>
+    <footer>
+        <p>Site feito por <strong>João Pedro Leite</strong> para o curso de <strong>JavaScript</strong></p>
+    </footer>
+    
+</body>
+<script>
+   
+
+    
+    function relogio() { 
+
+    var agora = new Date()
+    var hora = agora.getHours()
+
+    
+
+    
+    var imagem = window.document.getElementById('img')
+    var horario = window.document.getElementById('mensagem')
+
+    if(hora < 6) {
+        // Bom dia
+        horario.innerHTML = `Bom dia, agora são ${hora} horas`
+        imagem.src = 'imagens/foto-manha-250.png'
+        document.body.style.background = '#85C8F2'
+
+    } else if ( hora > 6 && hora < 18) {
+        // Boa tarde
+        horario.innerHTML = `Boa tarde, agora são ${hora} horas`
+        imagem.src = 'imagens/foto-tarde-250.png'
+        
+        document.body.style.background = '#98A67B'
+
+    } else {
+        // Boa noite
+        horario.innerHTML = `Boa noite, agora são ${hora} horas`
+        imagem.src = 'imagens/foto-noite-250.png'
+        
+        document.body.style.background = '#012326'
+    }
+     }
+</script>
+</html>

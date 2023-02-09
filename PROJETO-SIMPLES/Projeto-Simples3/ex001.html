@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício da data</title>
+</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
+    ">
+<style>
+
+    /* 
+    Cores :
+    
+    Manhã - #85C8F2
+    Tarde - #98A67B
+    Noite - #012326
+     */
+
+    * {
+        margin: 0px;
+        padding: 0px;   
+        box-sizing: border-box;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+        background-color: rgb(104, 194, 224);
+        height: 100%;
+        width: 100vw;
+    }
+
+    header {
+        margin-top: 40px;
+        font-size: 1.5em;
+        text-align: center;
+        color: white;
+    }
+    
+    main {
+        width: 450px;
+        background-color: white;
+
+        margin: 30px auto;
+       
+
+        border-radius: 15px;
+        box-shadow: 0px 1px 3px 0px black;
+        padding: 10px 20px;
+
+    }
+
+    .cartao {
+         padding: 15px 0px;
+    }
+
+    footer {
+        
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        
+        color: white;
+        background-color: rgb(118, 118, 202);    
+        text-align: center;
+        padding: 2px;
+        
+    
+    }
+</style>
+<body>
+    <header>
+        <h1>Horário do dia</h1>
+    </header>
+    <main>
+     <div id="form">
+        <form action="">
+                <div class="cartao">
+                    <label for="inicio">Início:</label>
+                    <input type="number" name="inicio" id="inicio">
+                </div>
+                <div class="cartao">
+                    <label for="fim">Fim:</label>
+                    <input type="number" name="fim" id="fim">
+                </div>
+                <div class="cartao">
+                    <label for="passo">Passo
+                    </label>
+                    <input type="number" name="passo" id="passo">
+                </div>
+                <div class="cartao">
+                    <input type="button" value="Calcular" onclick="calcular()">
+                </div>
+        </form>
+     </div>
+
+     <div>
+        <p id="res"></p>
+     </div>
+    </main>
+    <footer>
+        <p>Site feito por <strong>João Pedro Leite</strong> para o curso de <strong>JavaScript</strong></p>
+    </footer>
+    
+</body>
+<script>
+  
+
+    function calcular() {
+        var inicio = document.getElementById('inicio')
+        var fim = document.getElementById('fim')
+        var passo = document.getElementById('passo')
+        var res = document.getElementById('res')
+
+
+   
+        if (inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0) {  
+            window.alert('Sua caixa está vazia, porfavor insira um número')
+             } else { 
+        res.innerHTML = 'Contando...'
+
+        var ri = Number(inicio.value)
+        var rf = Number (fim.value)
+        var rp = Number (passo.value)
+
+        if (passo.value <= 0) {
+            window.alert('Passo inválido')
+            passo.value = 1
+        } else { 
+                
+        if (ri < rf) { 
+            // Contagem crescente
+        for (var c = ri; c < rf; c += rp){
+
+            res.innerHTML += `${c} \u{1F499}`
+
+            }
+           
+             } else {
+                // Contagem regressiva
+                for (var c = ri; c > rf; c -= rp){
+
+                    res.innerHTML += `${c} \u{1F499}`
+
+                    }
+                    
+             }
+             res.innerHTML += `${c} \u{1F3C1}`
+        }
+    }
+}
+     
+</script>
+</html>

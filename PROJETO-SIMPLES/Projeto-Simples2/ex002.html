@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício da data</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;   
+        box-sizing: border-box;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    body {
+        background-color: rgb(104, 194, 224);
+        height: 100%;
+        width: 100vw;
+    }
+
+    header {
+        margin-top: 40px;
+        font-size: 1.5em;
+        text-align: center;
+        color: white;
+    }
+    h1 {
+ 
+    }
+    main {
+        width: 550px;
+        background-color: white;
+
+        margin: auto;
+
+        border-radius: 30px;
+        box-shadow: 0px 1px 3px 0px black;
+        text-align: center;
+
+        padding: 5px;
+    }
+
+    main > p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    div#form{
+        text-align: left;
+        padding: 20px;
+    }
+
+    div  input {
+        margin: 7px 0px;
+    }
+
+    img {
+        border-radius: 50%;
+        margin: 5px auto;
+        display: block;
+    }
+
+    footer {
+        
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        
+        color: white;
+        background-color: rgb(118, 118, 202);    
+        text-align: center;
+        padding: 2px;
+        
+    
+    }
+</style>
+<body>
+    <header>
+        <h1>Horário do dia</h1>
+    </header>
+    <main>
+     <div id="form">
+
+        <form action="verificar">
+            <label for="ano">Ano do nascimento:</label>
+            <input type="number" name="ano" id="ano" min="0">
+            <br>
+            <label for="genero">
+                Gênero:
+            </label>
+            <input type="radio" name="genero" id="masculino" class="genero" > Masculino
+            <input type="radio" name="genero" id="feminino" class="genero"> Feminino
+            <br>
+            <input type="button" value="Verificar" onclick="verificar()">
+        </form>
+     </div>
+     <div id="res">
+      
+        
+     </div>
+     
+    </main>
+    <footer>
+        <p>Site feito por <strong>João Pedro Leite</strong> para o curso de JavaScript</p>
+    </footer>
+    <script>
+    
+
+        function verificar() {
+
+        
+        var res = document.getElementById('res')
+        var fano = document.getElementById('ano')
+        genero = document.getElementsByClassName('genero')
+
+        var valor1 = Number(fano.value)
+        var valor2 = String(genero.value)
+
+        
+        var data = new Date()
+        var ano = data.getFullYear()
+
+
+            if (valor1 == 0 || valor1 > ano) {
+                window.alert('[ERRO]')
+            } else {
+                var idade = ano - valor1 
+               
+                var sexo = ''
+                var img = document.createElement('img')
+                img.setAttribute('id', 'foto')
+                
+                if (genero[0].checked) {
+                    sexo = "Masculino"
+
+                    if (idade >= 0 && idade <18) {
+                        // criança
+                        img.setAttribute('src', 'imagens/homem-crianca-250-50%.jpg')
+                    } else if (idade < 22) {
+                        // Jovem
+                        img.setAttribute('src', 'imagens/homem-jovem-full-50%.jpg')
+
+                    } else if (idade < 50) {
+                        // Adulto
+                        img.setAttribute('src', 'imagens/homem-adulto-250-50%.jpg')
+                    } else {
+                        // Idoso
+                        img.setAttribute('src', 'imagens/homem-velho-250-50%.jpg')
+                    }
+
+                } else if (genero[1].checked) { 
+                    sexo = 'Mulher'
+                    if (idade >= 0 && idade <18) {
+                        // criança
+                        img.setAttribute('src', 'imagens/mulher-crianca-250-50%.jpg')
+                    } else if (idade < 22) {
+                        // Jovem
+                        img.setAttribute('src', 'imagens/mulher-jovem-full-50%.jpg')
+                    } else if (idade < 50) {
+                        // Adulto
+                        img.setAttribute('src', 'imagens/mulher-adulto-full-50%.jpg')
+                    } else {
+                        // idoso
+                        img.setAttribute('src', 'imagens/mulher-velha-full-50%.jpg')
+                    }
+
+                }
+                res.innerHTML = `Detectamos genero ${sexo} com ${idade} anos`
+                res.appendChild(img)
+            }
+        
+        }
+    </script>
+    
+</body>
+</html>
