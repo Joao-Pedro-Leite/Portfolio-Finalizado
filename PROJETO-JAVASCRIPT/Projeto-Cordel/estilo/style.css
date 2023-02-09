@@ -1,0 +1,82 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --font-titulo: 'Passion One';
+    --font-texto: 'Sriracha'
+}
+.joaninha {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../imagens/background001.jpg);
+}
+
+.livro {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../imagens/background002.jpg);
+}
+
+header {
+    background-color: black;
+    color:  white;
+    text-align: center;
+    padding: 40px;
+}
+
+header p {
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+h1 {
+    font-family:var(--font-titulo) ;
+    font-size: 10vw;
+}
+
+main p {
+    font-family: var(--font-texto);
+    line-height: 1.7em;
+    font-size: 3.5vw;
+    padding: 20px;
+}
+
+div {
+    box-shadow: -1px 1px 3px 1px black;
+    padding: 50px;
+}
+.branco { 
+    background-color: white;
+
+}
+
+.transparente {
+    background-color: transparent;
+}
+
+.transparente p {
+    display: inline-block;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
