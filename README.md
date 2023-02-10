@@ -3,7 +3,7 @@
 
 
  EXEMPLO:
- https://joao-pedro-leite.github.io/Portfolio-Finalizado/PROJETO-SIMPLES/Projeto-Simples1/ex001.html
+ https://joao-pedro-leite.github.io/Portfolio-Finalizado/PROJETO-HTML-CSS/Projeto-Android/index.html
  
  
  Aviso:
