@@ -8,4 +8,4 @@
  
  Aviso:
  - A Pokedex só funciona direito se abrir ela no VisualStudio Code com o Live server
- - Os Projetos que usam LiveServer precisam ser abertos no VisualStudio Code usando o NODEMON no app.js
+ - Os Projetos que usam EXPRESS precisam ser abertos no VisualStudio Code usando o NODEMON no app.js
